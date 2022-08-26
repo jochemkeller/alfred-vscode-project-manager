@@ -1,4 +1,4 @@
-find -L ~/Developer -type d -mindepth 2 -maxdepth 2 | fzf --exact --filter="$1" | jq -nR '
+find -L $root -type d -mindepth $mindepth -maxdepth $maxdepth | fzf --exact --filter="$1" | jq -nR '
 	[inputs]
 	|
 	map({

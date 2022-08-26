@@ -117,7 +117,93 @@
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
-	<array/>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>~/Developer</string>
+				<key>filtermode</key>
+				<integer>1</integer>
+				<key>required</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Please enter the directory path in which you have your VS Code projects</string>
+			<key>label</key>
+			<string>Root Directory</string>
+			<key>type</key>
+			<string>filepicker</string>
+			<key>variable</key>
+			<string>root</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>1</string>
+						<string>1</string>
+					</array>
+					<array>
+						<string>2</string>
+						<string>2</string>
+					</array>
+					<array>
+						<string>3</string>
+						<string>3</string>
+					</array>
+					<array>
+						<string>4</string>
+						<string>4</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Minimal search depth</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>mindepth</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>1</string>
+						<string>1</string>
+					</array>
+					<array>
+						<string>2</string>
+						<string>2</string>
+					</array>
+					<array>
+						<string>3</string>
+						<string>3</string>
+					</array>
+					<array>
+						<string>4</string>
+						<string>4</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Maximal search depth</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>maxdepth</string>
+		</dict>
+	</array>
+	<key>version</key>
+	<string>0.0.2</string>
 	<key>webaddress</key>
 	<string>https://jochemkeller.nl</string>
 </dict>
