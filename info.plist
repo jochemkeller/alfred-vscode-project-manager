@@ -98,7 +98,70 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string># VS Code Project Manager
+
+For this workflow to function the following required dependencies have to be installed:
+
+- fzf
+- jq
+
+Use the following script to quickly install them with `brew`:
+
+- `brew install fzf`
+- `brew install jq`
+
+## Options
+
+### Root Directory
+
+Use the file picker to configure the default folder in which the Project Manager conducts it's searches. This can be any folder on your system:
+
+.
+└── 📁 Root Directory/ `← 🙋 Configure me!`
+    ├── 📁 Project category 1/
+    │   ├── 📁 Project 1/
+    │   │   └── 📁 Folder in Project 1
+    │   └── 📁 Project 2/
+    │       └── 📁 Folder in Project 2
+    └── 📁 Project category 2/
+        ├── 📁 Project 3/
+        │   └── 📁 Folder in Project 3
+        └── 📁 Project 4/
+            └── 📁 Folder in Project 4
+
+### Minimum search depth
+
+Configure the *minimum* depth the Project Manager should use to search. For instance when you select `2`, the following diagram shows how the Project Manager searches:
+
+.
+└── 📁 Root Directory/ `← ❌ Ignored`
+    ├── 📁 Project category 1/ `← ❌ Ignored`
+    │   ├── 📁 Project 1/ `← ✅ Found!`
+    │   │   └── 📁 Folder in Project 1
+    │   └── 📁 Project 2/ `← ✅ Found!`
+    │       └── 📁 Folder in Project 2
+    └── 📁 Project category 2/ `← ❌ Ignored`
+        ├── 📁 Project 3/ `← ✅ Found!`
+        │   └── 📁 Folder in Project 3
+        └── 📁 Project 4/ `← ✅ Found!`
+            └── 📁 Folder in Project 4
+
+### Maximum search depth
+
+Configure the *maximum* depth the Project Manager should use to search. For instance when you select `2`, the following diagram shows how the Project Manager searches:
+
+.
+└── 📁 Root Directory/ `← ❌ Ignored`
+    ├── 📁 Project category 1/ `← ❌ Ignored`
+    │   ├── 📁 Project 1/ `← ✅ Found!`
+    │   │   └── 📁 Folder in Project 1 `← ❌ Ignored, since I'm level 3`
+    │   └── 📁 Project 2/ `← ✅ Found!`
+    │       └── 📁 Folder in Project 2 `← ❌ Ignored, since I'm level 3`
+    └── 📁 Project category 2/ `← ❌ Ignored`
+        ├── 📁 Project 3/ `← ✅ Found!`
+        │   └── 📁 Folder in Project 3 `← ❌ Ignored, since I'm level 3`
+        └── 📁 Project 4/ `← ✅ Found!`
+            └── 📁 Folder in Project 4 `← ❌ Ignored, since I'm level 3`</string>
 	<key>uidata</key>
 	<dict>
 		<key>63441BD6-AF92-4942-914E-570E76797C98</key>
@@ -131,7 +194,7 @@
 			<key>description</key>
 			<string>Please enter the directory path in which you have your VS Code projects</string>
 			<key>label</key>
-			<string>Root Directory</string>
+			<string>Root directory</string>
 			<key>type</key>
 			<string>filepicker</string>
 			<key>variable</key>
@@ -161,9 +224,9 @@
 				</array>
 			</dict>
 			<key>description</key>
-			<string></string>
+			<string>This option controls the minimum depth in which the Project Manager searches. Review the pane on the right for more info</string>
 			<key>label</key>
-			<string>Minimal search depth</string>
+			<string>Minimum search depth</string>
 			<key>type</key>
 			<string>popupbutton</string>
 			<key>variable</key>
@@ -193,9 +256,9 @@
 				</array>
 			</dict>
 			<key>description</key>
-			<string></string>
+			<string>This option controls the maximum depth in which the Project Manager searches. Review the pane on the right for more info</string>
 			<key>label</key>
-			<string>Maximal search depth</string>
+			<string>Maximum search depth</string>
 			<key>type</key>
 			<string>popupbutton</string>
 			<key>variable</key>
@@ -203,7 +266,7 @@
 		</dict>
 	</array>
 	<key>version</key>
-	<string>0.0.2</string>
+	<string>0.0.3</string>
 	<key>webaddress</key>
 	<string>https://jochemkeller.nl</string>
 </dict>
