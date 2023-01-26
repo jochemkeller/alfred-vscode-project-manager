@@ -1,15 +1,19 @@
-find -L $root -type d -mindepth $mindepth -maxdepth $maxdepth | fzf --exact --filter="$1" | jq -nR '
+: ${root:=~/Developer}
+: ${mindepth:=2}
+: ${maxdepth:=2}
+
+find -L "${root}" -type d -mindepth "${mindepth}" -maxdepth "${maxdepth}" | sed -e 's|/Users/jochem/Developer/||' | fzf --exact --filter="$1" | jq -nR '
 	[inputs]
 	|
 	map({
-		uid: .,
+		uid: ("/Users/jochem/Developer/" + .),
 		title: split("/")[-1],
-		subtitle: "~/\(split("/")[3:-1]|join("/"))",
-		arg: .,
-		autocomplete: .,
+		subtitle: "~/Developer/\(split("/")[0])",
+		arg: ("/Users/jochem/Developer/" + .),
+		autocomplete: ("/Users/jochem/Developer/" + .),
 		icon: {
 			type: "fileicon",
-			path: .
+			path: ("/Users/jochem/Developer/" + .)
 		}
 	})
 	|
