@@ -8,11 +8,36 @@
 	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
+		<key>A521B4C4-A24F-481C-92F3-A2FD12F0F225</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2BA405E6-D80E-4FC7-B0BF-553874BB040B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>3C1A2A84-096B-4D74-9958-C186341C6F98</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>63441BD6-AF92-4942-914E-570E76797C98</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>EFCA4A0D-100E-4E55-B2B3-4EF91B803112</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>63441BD6-AF92-4942-914E-570E76797C98</string>
+				<string>A521B4C4-A24F-481C-92F3-A2FD12F0F225</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -32,6 +57,29 @@
 	<string>VS Code Project Manager</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>eval $1</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>5</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2BA405E6-D80E-4FC7-B0BF-553874BB040B</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -80,6 +128,38 @@
 			<string>EFCA4A0D-100E-4E55-B2B3-4EF91B803112</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{query}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>4</integer>
+						<key>matchstring</key>
+						<string>code -n</string>
+						<key>outputlabel</key>
+						<string>remote</string>
+						<key>uid</key>
+						<string>3C1A2A84-096B-4D74-9958-C186341C6F98</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>not remote</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>A521B4C4-A24F-481C-92F3-A2FD12F0F225</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -164,12 +244,26 @@ Configure the *maximum* depth the Project Manager should use to search. For inst
             └── 📁 Folder in Project 4 `← ❌ Ignored, since I'm level 3`</string>
 	<key>uidata</key>
 	<dict>
+		<key>2BA405E6-D80E-4FC7-B0BF-553874BB040B</key>
+		<dict>
+			<key>xpos</key>
+			<real>375</real>
+			<key>ypos</key>
+			<real>50</real>
+		</dict>
 		<key>63441BD6-AF92-4942-914E-570E76797C98</key>
 		<dict>
 			<key>xpos</key>
-			<real>265</real>
+			<real>375</real>
 			<key>ypos</key>
-			<real>50</real>
+			<real>195</real>
+		</dict>
+		<key>A521B4C4-A24F-481C-92F3-A2FD12F0F225</key>
+		<dict>
+			<key>xpos</key>
+			<real>235</real>
+			<key>ypos</key>
+			<real>70</real>
 		</dict>
 		<key>EFCA4A0D-100E-4E55-B2B3-4EF91B803112</key>
 		<dict>
@@ -188,6 +282,8 @@ Configure the *maximum* depth the Project Manager should use to search. For inst
 				<string>~/Developer</string>
 				<key>filtermode</key>
 				<integer>1</integer>
+				<key>placeholder</key>
+				<string></string>
 				<key>required</key>
 				<true/>
 			</dict>
@@ -203,6 +299,8 @@ Configure the *maximum* depth the Project Manager should use to search. For inst
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>default</key>
+				<string>1</string>
 				<key>pairs</key>
 				<array>
 					<array>
@@ -235,6 +333,8 @@ Configure the *maximum* depth the Project Manager should use to search. For inst
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>default</key>
+				<string>1</string>
 				<key>pairs</key>
 				<array>
 					<array>
@@ -263,6 +363,48 @@ Configure the *maximum* depth the Project Manager should use to search. For inst
 			<string>popupbutton</string>
 			<key>variable</key>
 			<string>maxdepth</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<false/>
+				<key>verticalsize</key>
+				<integer>6</integer>
+			</dict>
+			<key>description</key>
+			<string>This option allows for adding optional remotes. They should be newline seperated</string>
+			<key>label</key>
+			<string>Remotes</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>remotes</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<false/>
+				<key>verticalsize</key>
+				<integer>6</integer>
+			</dict>
+			<key>description</key>
+			<string>This option allows for adding optional remote directories</string>
+			<key>label</key>
+			<string>Remote directories</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>remotedirs</string>
 		</dict>
 	</array>
 	<key>version</key>
